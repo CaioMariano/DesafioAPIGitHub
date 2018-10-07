@@ -10,15 +10,15 @@ import UIKit
 
 class Pull {
     
-    var _name: String!
-    var _image: UIImage!
-    var _autorName: String!
-    var _title: String!
-    var _date: String!
-    var _body: String!
-    var _URL: String!
-    var _id: String!
-    var _htmlURL: String!
+    var _name: String?
+    var _image: UIImage?
+    var _autorName: String?
+    var _title: String?
+    var _date: String?
+    var _body: String?
+    var _URL: String?
+    var _id: String?
+    var _htmlURL: String?
     
     var pulls = [Pull]()
     
@@ -27,7 +27,7 @@ class Pull {
         if _name == nil {
             _name = ""
         }
-        return _name
+        return _name!
     }
     
     // Image
@@ -36,7 +36,7 @@ class Pull {
             _image = UIImage()
         }
         
-        return _image
+        return _image!
     }
     
     // autorName
@@ -45,7 +45,7 @@ class Pull {
             _autorName = ""
         }
         
-        return _autorName
+        return _autorName!
     }
     
     // title
@@ -54,7 +54,7 @@ class Pull {
             _title = ""
         }
         
-        return _title
+        return _title!
     }
     
     // body
@@ -63,7 +63,7 @@ class Pull {
             _body = ""
         }
         
-        return _body
+        return _body!
     }
     
     // htmlURL
@@ -72,7 +72,7 @@ class Pull {
             _htmlURL = ""
         }
         
-        return _htmlURL
+        return _htmlURL!
     }
     
     // Date
@@ -81,7 +81,7 @@ class Pull {
             _date = ""
         }
         
-        return _date
+        return _date!
     }
     
     init() {}
