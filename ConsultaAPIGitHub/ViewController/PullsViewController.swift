@@ -32,7 +32,8 @@ class PullsViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+    
+        
         indicatorFooter.frame.size.height = 100
         indicatorFooter.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         indicatorFooter.startAnimating()
@@ -54,28 +55,32 @@ class PullsViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     
     //MARK: Funcoes
+    
+    //numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.pulls.count
     }
     
+    //CellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
-        let titleLabel = cell.viewWithTag(1) as! UILabel
-        let bodyLabel = cell.viewWithTag(2) as! UILabel
-        let prUserLabel = cell.viewWithTag(3) as! UILabel
+        let titleLabel = cell.viewWithTag(1) as? UILabel
+        let bodyLabel = cell.viewWithTag(2) as? UILabel
+        let prUserLabel = cell.viewWithTag(3) as? UILabel
         let prUserImage = cell.viewWithTag(10) as! UIImageView
         let dateUser = cell.viewWithTag(9) as? UILabel
-        prUserImage.layer.cornerRadius = prUserImage.frame.size.width / 2
+        
         
         let pull = self.pulls[indexPath.row]
         
-        titleLabel.text = pull.title
-        bodyLabel.text = pull.body
-        prUserLabel.text = pull.name
+        titleLabel?.text = pull.title
+        bodyLabel?.text = pull.body
+        prUserLabel?.text = pull.name
         dateUser?.text = pull.date
         prUserImage.image = pull.image
+        
         
         
         print("Nome: \(pull.name)")
@@ -84,6 +89,7 @@ class PullsViewController: UIViewController ,UITableViewDelegate, UITableViewDat
         
     } // fechamento cellforRowAt
     
+    // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         print("clicado")
@@ -115,13 +121,14 @@ class PullsViewController: UIViewController ,UITableViewDelegate, UITableViewDat
         self.repoNameLabel.text = self.repo.name
 
     }
-    
+
+    //WillDisplay
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == pulls.count {
-            tableView.tableFooterView = indicatorFooter
+            //tableView.tableFooterView = indicatorFooter
             
         }
     
-    }
+    }// Fechemento willDispay
 }
 

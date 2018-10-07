@@ -9,7 +9,7 @@
 import UIKit
 
 class RepositorioViewController: UITableViewController {
-
+    
     //MARK: Propriedades
     var searchURL = "https://api.github.com/search/repositories?q=language:Swift&sort=stars&page=1"
     var userURL = "https://api.github.com/users/"
@@ -36,7 +36,7 @@ class RepositorioViewController: UITableViewController {
     
     //MARK: Funcoes
     func getData(){
-       
+        
         self.loadedPages += 1
         
         Repository.downloadRepositories(page: self.loadedPages) { repos in
@@ -45,14 +45,14 @@ class RepositorioViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
+    
     //MARK: tableView -- numberOfRowsInSection
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repos.count
         
     }
- 
+    
     //MARK: tableView -- cellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
@@ -64,13 +64,8 @@ class RepositorioViewController: UITableViewController {
         let starCountLabel = cell?.viewWithTag(6) as! UILabel
         let userRealNameLabel = cell?.viewWithTag(7) as? UILabel
         
-        //let forkImage = cell?.viewWithTag(10) as! UIImageView
-        //let starImage = cell?.viewWithTag(11) as! UIImageView
         
-       
-
         
-        mainImageView.layer.cornerRadius = mainImageView.frame.size.width / 2
         
         let repo = self.repos[indexPath.row]
         
@@ -93,6 +88,7 @@ class RepositorioViewController: UITableViewController {
         }
         
     }
+    //MARK: Prepare -- segue PullsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = self.tableView.indexPathForSelectedRow?.row
         let vc = segue.destination as! PullsViewController

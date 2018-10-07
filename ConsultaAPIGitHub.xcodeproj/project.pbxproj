@@ -65,6 +65,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		781A7C20216A735600A9B1A4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78B81CD52165CA90007ED4BE /* RepositorioViewController.swift */,
+				781A7C1E2166E54300A9B1A4 /* PullsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		78B81C8C21642765007ED4BE = {
 			isa = PBXGroup;
 			children = (
@@ -88,10 +97,9 @@
 			children = (
 				78B81C9821642765007ED4BE /* AppDelegate.swift */,
 				78B81CD42165BB04007ED4BE /* Classes */,
-				78B81C9C21642765007ED4BE /* Main.storyboard */,
-				78B81CD52165CA90007ED4BE /* RepositorioViewController.swift */,
-				781A7C1E2166E54300A9B1A4 /* PullsViewController.swift */,
+				781A7C20216A735600A9B1A4 /* ViewController */,
 				78B81CA221642768007ED4BE /* Assets.xcassets */,
+				78B81C9C21642765007ED4BE /* Main.storyboard */,
 				78B81CA421642768007ED4BE /* LaunchScreen.storyboard */,
 				78B81CA721642768007ED4BE /* Info.plist */,
 				78B81C9F21642765007ED4BE /* ConsultaAPIGitHub.xcdatamodeld */,
