@@ -145,7 +145,7 @@ class Pull {
             }
         }
         
-    }
+    } // Fechamento Init
     
     static func getPulls(pullArray array:[AnyObject]) -> [Pull]{
         
